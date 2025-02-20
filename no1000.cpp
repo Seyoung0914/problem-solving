@@ -25,4 +25,6 @@ int main()
     cin >> b;
 
     cout << add(a, b);
+
+    return 0;
 }
