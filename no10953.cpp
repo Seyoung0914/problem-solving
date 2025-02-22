@@ -12,7 +12,7 @@
 // 출력
 // 각 테스트 케이스마다 A+B를 출력한다.
 
-// #1 comma를 따로 처리해버리기
+// #1 comma를 따로 처리해버리기!
 #include <iostream>
 
 using namespace std;
