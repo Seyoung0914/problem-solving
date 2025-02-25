@@ -36,3 +36,22 @@ int main()
     if (sum % 7 == 0)
         cout << "SUN";
 }
+
+// 다른 코드=>아예 배열로 마무리
+#include <stdio.h>
+
+using namespace std;
+int main()
+{
+    char w[7][4] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
+    int month[] = {0, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int m, d, sum = 0;
+    scanf("%d %d", &m, &d);
+    for (int i = 1; i < m; i++)
+    {
+        sum += month[i];
+    }
+    sum += d;
+    printf("%d", w[sum % 7]);
+    return 0;
+}
