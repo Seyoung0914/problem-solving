@@ -1,6 +1,6 @@
-// 그대로 출력하기 2
+// 그대로 출력하기 2 성공
 // 시간 제한	메모리 제한	제출	정답	맞힌 사람	정답 비율
-// 1 초	256 MB	70514	38647	33695	58.620%
+// 1 초	256 MB	70571	38683	33722	58.620%
 // 문제
 // 입력 받은 대로 출력하는 프로그램을 작성하시오.
 
@@ -9,6 +9,19 @@
 
 // 출력
 // 입력받은 그대로 출력한다.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    char input[101];
+
+    while (cin.getline(input, 101))
+    {
+        cout << input << endl;
+    }
+}
 
 #include <iostream>
 #include <string>
@@ -18,10 +31,6 @@ using namespace std;
 int main()
 {
     string input;
-
     while (getline(cin, input))
-    {
         cout << input << endl;
-    }
-    return 0;
 }
