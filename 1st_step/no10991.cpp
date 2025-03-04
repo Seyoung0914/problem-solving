@@ -1,4 +1,4 @@
-// 별 찍기 - 16
+// 별 찍기 - 16 성공
 // 시간 제한	메모리 제한	제출	정답	맞힌 사람	정답 비율
 // 1 초	256 MB	21289	16645	15032	79.033%
 // 문제
@@ -9,7 +9,6 @@
 
 // 출력
 // 첫째 줄부터 N번째 줄까지 차례대로 별을 출력한다.
-
 #include <iostream>
 
 using namespace std;
@@ -17,16 +16,14 @@ using namespace std;
 int main()
 {
     int n;
-
     cin >> n;
     for (int i = 0; i < n; i++)
     {
-        // 공백
-        for (int k = 0; k < n - i - 1; k++)
+        for (int j = n - i - 1; j > 0; j--)
             cout << " ";
-        // 별
-        for (int j = 0; j < i + 1; j++)
+        for (int k = 0; k < i + 1; k++)
             cout << "* ";
         cout << endl;
     }
+    return 0;
 }
