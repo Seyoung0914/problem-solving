@@ -10,28 +10,88 @@
 // 출력
 // 첫째 줄에 주어진 정수 N개의 최솟값과 최댓값을 공백으로 구분해 출력한다.
 
-#include <iostream>
+// 방법 1
+// #include <iostream>
 
-using namespace std;
+// using namespace std;
+
+// int main()
+// {
+//     ios::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int n;
+//     cin >> n;
+
+//     int maximum = -1000000;
+//     int minimum = 1000000;
+
+//     int input[1000000];
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> input[i];
+
+//         if (input[i] >= maximum)
+//             maximum = input[i];
+//         if (input[i] <= minimum)
+//             minimum = input[i];
+//     }
+//     cout << minimum << " " << maximum << endl;
+//     return 0;
+// }
+
+// 방법 2
+//  #include <iostream>
+
+// using namespace std;
+
+// int main()
+// {
+
+//     int n;
+//     scanf("%d", &n);
+
+//     int maximum = -1000000;
+//     int minimum = 1000000;
+
+//     int input[1000000];
+//     for (int i = 0; i < n; i++)
+//     {
+//         scanf("%d", &input[i]);
+
+//         if (input[i] >= maximum)
+//             maximum = input[i];
+//         if (input[i] <= minimum)
+//             minimum = input[i];
+//     }
+//     printf("%d %d\n", minimum, maximum);
+//     return 0;
+// }
+
+// 방법 3 by gpt
+#include <stdio.h>
 
 int main()
 {
     int n;
-    int input;
+    scanf("%d", &n);
 
-    cin >> n;
-
-    int m = 100000, M = -100000;
+    int maximum = -1000000;
+    int minimum = 1000000;
 
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", &input);
-        if (input < m)
-            m == input;
-        if (input > M)
-            M == input;
-    }
-    cout << m << " " << M;
+        int num;
+        scanf("%d", &num);
 
+        if (num > maximum)
+            maximum = num;
+        if (num < minimum)
+            minimum = num;
+    }
+
+    printf("%d %d\n", minimum, maximum);
     return 0;
 }
+
+// 시간은 방법1>방법3>방법2>cin.tie와 ios::sync_with_studio(false) 모두 안쓴거
