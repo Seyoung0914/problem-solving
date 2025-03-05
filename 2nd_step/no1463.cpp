@@ -123,14 +123,14 @@ int main()
     printf("%d", Sol(N));
 }
 
-// #include <iostream>
+#include <iostream>
 
-// using namespace std;
+using namespace std;
 
-// int cal(int n)
-// {
-//     if (n <= 1)
-//         return 0;
+int cal(int n)
+{
+    if (n <= 1)
+        return 0;
 
-//     int s1 = cal(n / 3) + n;
-// }
+    int s1 = cal(n / 3) + n;
+}
