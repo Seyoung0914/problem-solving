@@ -63,74 +63,74 @@
 //     cout << c << endl;
 // }
 
-// 방법 1 gpt
-// #include <iostream>
-// #include <algorithm> // min() 사용
-
-// using namespace std;
-
-// int dp[1000001]; // dp[i]: i를 1로 만들기 위한 최소 연산 횟수
-
-// int main()
-// {
-//     ios::sync_with_stdio(false);
-//     cin.tie(NULL);
-
-//     int n;
-//     cin >> n;
-
-//     dp[1] = 0; // 1은 연산 없이 1이므로 0
-
-//     for (int i = 2; i <= n; i++)
-//     {
-//         // 기본적으로 1을 빼는 연산을 수행한 경우
-//         dp[i] = dp[i - 1] + 1;
-
-//         // 2로 나누어 떨어지면 최소값 갱신
-//         if (i % 2 == 0)
-//             dp[i] = min(dp[i], dp[i / 2] + 1);
-
-//         // 3으로 나누어 떨어지면 최소값 갱신
-//         if (i % 3 == 0)
-//             dp[i] = min(dp[i], dp[i / 3] + 1);
-//     }
-
-//     cout << dp[n] << '\n'; // 최종 결과 출력
-//     return 0;
-// }
-
-// 방법 2 재귀함수 이용
-
-#include <stdio.h>
-
-int Sol(int n)
-{
-    if (n <= 1)
-        return 0;
-
-    int s1 = Sol(n / 3) + n % 3 + 1;
-    int s2 = Sol(n / 2) + n % 2 + 1;
-
-    return (s1 < s2) ? s1 : s2;
-}
-
-int N;
-
-int main()
-{
-    scanf("%d", &N);
-
-    printf("%d", Sol(N));
-}
-
+// 방법 1 gptas
 #include <iostream>
+#include <algorithm> // min() 사용
 
 using namespace std;
 
-int cal(int n)
-{
-    if (n <= 1)
-        return 0;
+int dp[1000001]; // dp[i]: i를 1로 만들기 위한 최소 연산 횟수
 
-    int s1 = cal(n / 3) + n;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    cin >> n;
+
+    dp[1] = 0; // 1은 연산 없이 1이므로 0
+
+    for (int i = 2; i <= n; i++)
+    {
+        // 기본적으로 1을 빼는 연산을 수행한 경우
+        dp[i] = dp[i - 1] + 1;
+
+        // 2로 나누어 떨어지면 최소값 갱신
+        if (i % 2 == 0)
+            dp[i] = min(dp[i], dp[i / 2] + 1);
+
+        // 3으로 나누어 떨어지면 최소값 갱신
+        if (i % 3 == 0)
+            dp[i] = min(dp[i], dp[i / 3] + 1);
+    }
+
+    cout << dp[n] << '\n'; // 최종 결과 출력
+    return 0;
 }
+
+// 방법 2 재귀함수 이용
+
+// #include <stdio.h>
+
+// int Sol(int n)
+// {
+//     if (n <= 1)
+//         return 0;
+
+//     int s1 = Sol(n / 3) + n % 3 + 1;
+//     int s2 = Sol(n / 2) + n % 2 + 1;
+
+//     return (s1 < s2) ? s1 : s2;
+// }
+
+// int N;
+
+// int main()
+// {
+//     scanf("%d", &N);
+
+//     printf("%d", Sol(N));
+// }
+
+// #include <iostream>
+
+// using namespace std;
+
+// int cal(int n)
+// {
+//     if (n <= 1)
+//         return 0;
+
+//     int s1 = cal(n / 3) + n;
+// }
