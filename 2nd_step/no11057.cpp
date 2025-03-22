@@ -14,7 +14,7 @@
 // 첫째 줄에 N이 주어진다.
 
 // 출력
-// 첫째 줄에 N자리 이친수의 개수를 출력한다.
+// 첫째 줄에 N자리 이친수의 개수를 출력한다. !
 #include <iostream>
 
 using namespace std;
