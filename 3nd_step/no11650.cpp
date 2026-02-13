@@ -1,30 +1,40 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 // 첫 번째 코드  - Vector & 사용자 지정 Compare (X)
 using namespace std;
 
-int main(){
-    vector<pair<int,int>> v;
+struct subject
+{
+	string name;
+	int korean;
+	int english;
+	int math;
+};
 
-    int N;
-    cin >> N;
+int main()
+{
+	vector<pair<int, int>> v;
 
-    int x,y;
+	int N;
+	cin >> N;
 
-    for(int i=0; i<N; i++){
-        cin >> x >> y;
-        v.push_back({x,y});
-    }
-    sort(v.begin(), v.end());
+	int x, y;
 
-    for (int i = 0; i < N; i++) {
-    cout << v[i].first << ' ' << v[i].second << '\n';
-}
+	for (int i = 0; i < N; i++)
+	{
+		cin >> x >> y;
+		v.push_back({x, y});
+	}
+	sort(v.begin(), v.end());
 
+	for (int i = 0; i < N; i++)
+	{
+		cout << v[i].first << ' ' << v[i].second << '\n';
+	}
 
-    return 0;
+	return 0;
 }
 
 // 두번째 코드 Vector & 사용자 지정 Compare (O)
@@ -37,7 +47,7 @@ int main(){
 using namespace std;
 
 bool compare(pair<int, int>a, pair<int, int>b) {
-	if (a.first == b.first) {	// x가 같은 경우에만, 
+	if (a.first == b.first) {	// x가 같은 경우에만,
 		return a.second < b.second;	// y를 기준으로 오름차순
 	}
 	else {
@@ -47,24 +57,24 @@ bool compare(pair<int, int>a, pair<int, int>b) {
 
 int main(){
 	int n, x, y;
-    	vector<pair<int, int>> v; // 이차원 벡터 선언
+		vector<pair<int, int>> v; // 이차원 벡터 선언
 	cin >> n;
 
 	for (int i = 0; i < n; i++){
-    	cin >> x >> y;
-    	// 첫 번째 - 이차원 벡터 입력 방법
-    	v.push_back({x, y});
-        // 두 번째 - 이차원 벡터 입력 방법
-        // v.push_back(make_pair(x, y));
-    }
-    
+		cin >> x >> y;
+		// 첫 번째 - 이차원 벡터 입력 방법
+		v.push_back({x, y});
+		// 두 번째 - 이차원 벡터 입력 방법
+		// v.push_back(make_pair(x, y));
+	}
+
 	sort(v.begin(), v.end(), compare); // 오름차순
-    
+
 	for (int i = 0; i < n; i++) {
 		cout << v[i].first << " "<< v[i].second << "\n";
 	}
-    
-    return 0;
+
+	return 0;
 }
 */
 
