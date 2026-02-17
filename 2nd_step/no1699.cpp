@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 const int MAX = 100001;
@@ -14,12 +14,13 @@ const int MAX = 100001;
 // 예를 들어 12는 1+11, 4+8, 9+3 이 잖슴. 그러니까 min(dp[1]+1, dp[8]+1, dp[3]+1) 을 해서 최솟값을 모셔가야 하는거지
 // 마찬가지로 15는 1+14, 4+11, 9+6 이케 하면서 최솟값을 비교해야겠네
 
-
-int min(int a, int b){  
+int min(int a, int b)
+{
     return a < b ? a : b;
 }
 
-int main(){
+int main()
+{
     int number;
     int dp[MAX];
 
@@ -29,10 +30,12 @@ int main(){
     dp[1] = 1;
     dp[2] = 2;
     dp[3] = 3;
-    for(int i=4; i<=number; i++){
+    for (int i = 4; i <= number; i++)
+    {
         dp[i] = number;
-        for(int j=1; j*j<=i; j++){
-            dp[i] = min(dp[i-j*j] + 1, dp[i]);
+        for (int j = 1; j * j <= i; j++)
+        {
+            dp[i] = min(dp[i - j * j] + 1, dp[i]);
         }
         // cout << "dp[" << i << "] = " << dp[i] << endl;
     }
